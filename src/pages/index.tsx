@@ -2,7 +2,6 @@ import 'swiper/css';
 import "./styles/index.css";
 import LayoutImage from "../assets/images/layout.png"
 import { FiMapPin } from "react-icons/fi";
-import { Link, Element } from 'react-scroll';
 import ProductData from "../data/product.data";
 import { IoCallOutline } from "react-icons/io5";
 import ProductCard from "../components/ProductCard";

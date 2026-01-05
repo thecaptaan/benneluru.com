@@ -1,5 +1,12 @@
 import "./styles/ProductCard.css";
-export default function ProductCard({ title, imgSrc, imgAlt, rating, description }) {
+interface ProductCardInterface{
+    title: string;
+    imgSrc: string;
+    imgAlt: string;
+    rating: string;
+    description: string;
+}
+export default function ProductCard({ title, imgSrc, imgAlt, description }: ProductCardInterface) {
     return <div className="card-product">
         <div className="container-img">
             <img src={imgSrc} alt={imgAlt} />

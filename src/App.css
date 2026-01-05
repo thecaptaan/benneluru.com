@@ -1,0 +1,23 @@
+:root {
+  --white: #fff;
+  --primary-color: #510b0c;
+  --secondary-color: #055937;
+  --teriary-color: #CBAB67;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.cent {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}

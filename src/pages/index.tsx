@@ -9,7 +9,6 @@ import ProductData from "../data/product.data";
 import { IoCallOutline } from "react-icons/io5";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import ProductCard from "../components/ProductCard";
-import LayoutImage from "../assets/images/layout.png"
 import MainMenuCard from '../components/MainMenuCard';
 import Video1 from "../assets/videos/video1.mp4"
 import Video2 from "../assets/videos/video2.mp4"

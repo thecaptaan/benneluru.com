@@ -1,13 +1,28 @@
 .swiper-slide {
-    color: #fff;
-    width: 300px !important;
+    /* width: 300px !important; */
 }
 
 .menu-header-card {
     width: 300px;
-    height: 200px;
+    height: 500px;
+    color: #fff;
     border-radius: 10px;
-    padding: 20px;
     background-position: top;
-
+    background-position: center;
+    background-size: cover;
 }
+
+.menu-header-item{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background-image: linear-gradient(100deg, #000000, #00000020);
+}
+
+
+@media screen and (max-width: 1280px) {}
+
+
+
+@media screen and (max-width:600px) {}

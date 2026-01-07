@@ -9,9 +9,7 @@
 	align-items: stretch;
 }
 
-/* ********************************** */
-/*             UTILIDADES             */
-/* ********************************** */
+
 .container {
 	max-width: 120rem;
 	margin: 0 auto;
@@ -75,7 +73,7 @@
 .landing-txt-cont {
 	top: 50%;
 	color: #fff;
-	margin-top: -80px;
+	/* margin-top: -80px; */
 	padding-left: 100px;
 	position: absolute;
 }
@@ -238,11 +236,11 @@
 	padding-top: 20px;
 }
 
-.menu-container .swiper-slide {
+/* .menu-container .swiper-slide {
 	width: calc((100% - 100px) / 4);
 	display: flex;
 	justify-content: center;
-}
+} */
 
 .menu-item {
 	width: 90%;
@@ -250,6 +248,7 @@
 
 .menu-header-container {
 	padding: 40px 0;
+	padding-bottom: 20px;
 }
 
 .menu-tags-container {
@@ -355,6 +354,7 @@
 
 .special-menu-header {
 	padding: 50px;
+	padding-bottom: 30px;
 }
 
 /* ********************************** */
@@ -471,6 +471,7 @@
 .about-header-item {
 	width: 90%;
 	padding: 50px;
+	padding-bottom: 20px;
 }
 
 .about-heading {
@@ -610,7 +611,7 @@
 
 
 .video-card {
-	width: calc(100/4);
+	width: 100%;
 	height: 90%;
 	/* border-radius: 10px; */
 }
@@ -629,7 +630,7 @@
 	.video-section-container {}
 
 	.video-card {
-		width: calc(100% / 4.5);
+		width: 100%;
 	}
 
 	.video-card-bg {
@@ -824,6 +825,7 @@
 		gap: 10px;
 		flex-wrap: wrap;
 	}
+
 
 
 

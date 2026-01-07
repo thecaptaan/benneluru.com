@@ -29,7 +29,8 @@ import UpperNavigation from '../components/UpperNavigation';
 import { SiCoffeescript } from "react-icons/si";
 import { PiBowlFoodFill } from "react-icons/pi";
 import { FaMapMarkerAlt } from "react-icons/fa";
-
+import { IoMailOutline } from "react-icons/io5";
+import { Element } from 'react-scroll';
 export default function IndexPage() {
 
     const [activeMainMenu, setActiveMainMenu] = useState("bengaluru-ghee-dose")
@@ -39,7 +40,7 @@ export default function IndexPage() {
 
     return <>
         <FloatingSocial />
-        <div className="landing-section">
+        <Element name="home" className="landing-section">
             <Swiper modules={[Autoplay]} autoplay={{
                 delay: 3000,
                 disableOnInteraction: false,
@@ -76,7 +77,7 @@ export default function IndexPage() {
 
                 </div>
             </div>
-        </div>
+        </Element>
 
 
         <section className="resturant-features-container cent">
@@ -108,7 +109,7 @@ export default function IndexPage() {
 
         </section>
 
-        <section className="menu-categories cent">
+        <Element name="signature" className="menu-categories cent">
             <div className="menu-categories-item">
                 <div className="menu-cat-header-container cent">
                     <h1 className="heading-1">Signature from Bengaluru</h1>
@@ -149,16 +150,16 @@ export default function IndexPage() {
                     </Swiper>
                 </div>
             </div>
-        </section>
+        </Element>
 
-        <section className="menu-container cent">
+        <Element name="serve" className="menu-container cent">
             <div className="menu-item">
                 <div className="menu-header-container">
-                    <h1 className="heading-1">Our Menu</h1>
+                    <h1 className="heading-1">What We Serve</h1>
                 </div>
                 <div className="menu-tags-container row">
                     {
-                        MainMenuData.map(item => <div key={item.id} className={`menu-selection-tag ${activeMainMenu === item.key ? "active" : ""}`} onClick={() => changeMenuSelection(item.key)}>
+                        MainMenuData.map(item => <div key={item.id} className={`menu-selection-tag ${activeMainMenu === item.tags ? "active" : ""}`} onClick={() => changeMenuSelection(item.key)}>
                             <p>{item.title}</p>
                         </div>)
                     }
@@ -175,13 +176,13 @@ export default function IndexPage() {
                         loop={true}
                         breakpoints={{
                             0: {
-                                slidesPerView: 1,   // mobile
+                                slidesPerView: 2,
                             },
                             640: {
                                 slidesPerView: 2,   // small tablets
                             },
                             1024: {
-                                slidesPerView: 3,   // laptops/desktops
+                                slidesPerView: 4,   // laptops/desktops
                             },
                             1440: {
                                 slidesPerView: 4,   // large screens
@@ -201,8 +202,8 @@ export default function IndexPage() {
                     </Swiper>
                 </div>
             </div>
-        </section>
-        <section className="gallery-conatiner row">
+        </Element>
+        <Element name="gallery" className="gallery-conatiner row">
             <div className="gallery-img-container col">
                 <img
                     src={Banner1}
@@ -235,12 +236,12 @@ export default function IndexPage() {
                     className="gallery-img-5"
                 />
             </div>
-        </section>
+        </Element>
 
-        <section className="special-menu cent">
+        <Element name="specials" className="special-menu cent">
             <div className="special-menu-item">
                 <div className="special-menu-header">
-                    <h1 className="heading-1">Specials</h1>
+                    <h1 className="heading-1">Kitchen Specials</h1>
                 </div>
 
                 <div className="special-card-container">
@@ -253,13 +254,13 @@ export default function IndexPage() {
                     }
                 </div>
             </div>
-        </section>
+        </Element>
 
-        <div className="about-header-section cent">
+        <Element name="story" className="about-header-section cent">
             <div className="about-header-item">
                 <h1 className='about-heading'>Our Story</h1>
             </div>
-        </div>
+        </Element>
         <div className="about-section cent">
             <div className="about-section-item row">
                 <div className='about-media-item cent'>
@@ -291,18 +292,52 @@ export default function IndexPage() {
 
         <div className="video-section-container">
             <div className="video-section-item row">
-                <div className="video-card">
-                    <video className="video-card-bg" src={Video1} autoPlay loop muted ></video>
-                </div>
-                <div className="video-card">
-                    <video className="video-card-bg" src={Video2} autoPlay loop muted ></video>
-                </div>
-                <div className="video-card">
-                    <video className="video-card-bg" src={Video3} autoPlay loop muted ></video>
-                </div>
-                <div className="video-card">
-                    <video className="video-card-bg" src={Video4} autoPlay loop muted ></video>
-                </div>
+                <Swiper spaceBetween={50}
+                    modules={[Autoplay]}
+                    autoplay={{
+                        delay: 3000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true,
+                    }}
+                    loop={true}
+                    breakpoints={{
+                        0: {
+                            slidesPerView: 1,   // mobile
+                        },
+                        640: {
+                            slidesPerView: 2,   // small tablets
+                        },
+                        1024: {
+                            slidesPerView: 4,   // laptops/desktops
+                        },
+                        1440: {
+                            slidesPerView: 4,   // large screens
+                        },
+                        1920: {
+                            slidesPerView: 4
+                        }
+                    }}>
+                    <SwiperSlide>
+                        <div className="video-card">
+                            <video className="video-card-bg" src={Video1} autoPlay loop muted ></video>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="video-card">
+                            <video className="video-card-bg" src={Video2} autoPlay loop muted ></video>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="video-card">
+                            <video className="video-card-bg" src={Video3} autoPlay loop muted ></video>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="video-card">
+                            <video className="video-card-bg" src={Video4} autoPlay loop muted ></video>
+                        </div>
+                    </SwiperSlide>
+                </Swiper>
             </div>
         </div>
         <div className="address-container cent">
@@ -317,6 +352,9 @@ export default function IndexPage() {
                         </div>
                         <div className="address-txt-div row">
                             <IoCallOutline className="address-txt-svg" /> <p className="address-txt-p"> <a href="tel:+917889440384">+91 7889440384</a></p>
+                        </div>
+                        <div className="address-txt-div row">
+                            <IoMailOutline className="address-txt-svg" /> <p className="address-txt-p"> <a href="mailto:support@benneluru.com">support@benneluru.com</a></p>
                         </div>
                     </div>
                 </div>

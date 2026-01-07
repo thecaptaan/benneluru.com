@@ -82,9 +82,8 @@
 @media screen and (max-width:600px) {
 	.product-card {
 		width: 150px;
-		font-size: 12px;
+		font-size: 10px;
 		height: fit-content;
-		text-align: justify;
 	}
 
 	.product-card-img-container {

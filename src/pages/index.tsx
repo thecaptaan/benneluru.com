@@ -82,29 +82,66 @@ export default function IndexPage() {
 
         <section className="resturant-features-container cent">
             <div className="resturant-features-container-item row">
-                <div className="rFeature-card row">
-                    <PiBowlFoodFill />
-                    <div className="feature-content col">
-                        <span>Freshly Made Dosa's : Authentic Bangalore Style Batter</span>
-                        <p>Made To Order, Served Hot</p>
-                    </div>
-                </div>
-                <div className="rFeature-card row">
-                    <SiCoffeescript />
-                    <div className="feature-content col">
-                        <span>Pure Filter Coffee : Traditional Decoction Method
-                        </span>
-                        <p>Strong, Aromatic & Authentic</p>
-                    </div>
-                </div>
-                <div className="rFeature-card row">
-                    <FaMapMarkerAlt />
-                    <div className="feature-content col">
-                        <span>Original Recipes From Bengaluru
-                        </span>
-                        <p>No fusion, no shortcuts</p>
-                    </div>
-                </div>
+                <Swiper spaceBetween={30}
+                    modules={[Autoplay]}
+                    autoplay={{
+                        delay: 3000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true,
+                    }}
+                    centeredSlides={false}
+                    loop={true}
+                    breakpoints={{
+                        0: {
+                            slidesPerView: 1,   // mobile
+                        },
+                        640: {
+                            slidesPerView: 1,   // small tablets
+                        },
+                        1024: {
+                            slidesPerView: 3,   // laptops/desktops
+                        },
+                        1440: {
+                            slidesPerView: 3,   // large screens
+                        },
+                        1920: {
+                            slidesPerView: 3
+                        }
+                    }}>
+
+                    <SwiperSlide>
+                        <div className="rFeature-card row">
+                            <PiBowlFoodFill />
+                            <div className="feature-content col">
+                                <span>Freshly Made Dosa's : Authentic Bangalore Style Batter</span>
+                                <p>Made To Order, Served Hot</p>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="rFeature-card row">
+                            <SiCoffeescript />
+                            <div className="feature-content col">
+                                <span>Pure Filter Coffee : Traditional Decoction Method
+                                </span>
+                                <p>Strong, Aromatic & Authentic</p>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="rFeature-card row">
+                            <FaMapMarkerAlt />
+                            <div className="feature-content col">
+                                <span>Original Recipes From Bengaluru
+                                </span>
+                                <p>No fusion, no shortcuts</p>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                </Swiper>
+
+
+
             </div>
 
         </section>
@@ -348,7 +385,7 @@ export default function IndexPage() {
                 <div className="address-txt-item cent">
                     <div className="address-txt-box col">
                         <div className="address-txt-div row">
-                            <FiMapPin className="address-txt-svg" /><p className="address-txt-p">  Direction: <a href="https://maps.app.goo.gl/NasrPbbV64LcSvCEA" target="_blank" rel="noopener noreferrer">F-91A, Gautam Marg, C Scheme, Ashok Nagar, Jaipur, Rajasthan 302001</a></p>
+                            <FiMapPin className="address-txt-svg address-svg-map-icon" /><p className="address-txt-p">  Direction: <a href="https://maps.app.goo.gl/NasrPbbV64LcSvCEA" target="_blank" rel="noopener noreferrer">F-91A, Gautam Marg, C Scheme, Ashok Nagar, Jaipur, Rajasthan 302001</a></p>
                         </div>
                         <div className="address-txt-div row">
                             <IoCallOutline className="address-txt-svg" /> <p className="address-txt-p"> <a href="tel:+917889440384">+91 7889440384</a></p>

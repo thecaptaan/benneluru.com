@@ -290,6 +290,7 @@ export default function IndexPage() {
                     </>
                     ) : (
                         <Swiper
+                            spaceBetween={50}
                             modules={[Autoplay]}
                             autoplay={{
                                 delay: 3000,
@@ -324,7 +325,7 @@ export default function IndexPage() {
                             }
                         </Swiper>
                     )}
-                    
+
                 </div>
             </div>
         </Element>

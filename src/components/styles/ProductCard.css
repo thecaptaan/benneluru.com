@@ -56,6 +56,30 @@
 	width: 100%;
 }
 
+@media screen and (max-width:1560px) {
+	.product-card {
+		width: 250px;
+		height: fit-content;
+		font-size: 14px;
+	}
+
+	.product-card-img-container {
+		width: 250px;
+		height: 250px;
+	}
+
+	.product-card-img {
+		width: 250px;
+	}
+}
+
+@media screen and (max-width:1280px) {
+	.product-card {
+		width: 250px;
+	}
+
+
+}
 
 @media screen and (max-width:600px) {
 	.product-card {

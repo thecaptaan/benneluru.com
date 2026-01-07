@@ -112,7 +112,6 @@ export default function IndexPage() {
             <div className="menu-categories-item">
                 <div className="menu-cat-header-container cent">
                     <h1 className="heading-1">Signature from Bengaluru</h1>
-
                 </div>
                 <div className="-categories">
                     <Swiper
@@ -134,7 +133,7 @@ export default function IndexPage() {
                                 slidesPerView: 2,   // small tablets
                             },
                             1024: {
-                                slidesPerView: 3,   // laptops/desktops
+                                slidesPerView: 4,   // laptops/desktops
                             },
                             1440: {
                                 slidesPerView: 5,   // large screens
@@ -244,7 +243,7 @@ export default function IndexPage() {
                     <h1 className="heading-1">Specials</h1>
                 </div>
 
-                <div className="container-products">
+                <div className="special-card-container">
                     {
                         ProductData.map((product, index) => {
                             if (index < 4) {
@@ -267,13 +266,9 @@ export default function IndexPage() {
                     <div className="about-mm-container row">
                         <video className="about-video" src={AboutVideo} autoPlay muted loop></video>
                         <div className="about-mm-photo">
-                            <div className="about-img-cont row">
+                            <div className="about-img-cont col">
                                 <img className="about-img-1" src={About1} alt="" />
                                 <img className="about-img-2" src={About2} alt="" />
-                            </div>
-                            <div className="about-img-cont row">
-                                <img className="about-img-3" src={About3} alt="" />
-                                <img className="about-img-4" src={About4} alt="" />
                             </div>
                         </div>
                     </div>

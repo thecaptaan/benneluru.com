@@ -31,13 +31,14 @@ import { PiBowlFoodFill } from "react-icons/pi";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoMailOutline } from "react-icons/io5";
 import { Element } from 'react-scroll';
+import useIsMobile from '../hook/isMobile';
 export default function IndexPage() {
 
     const [activeMainMenu, setActiveMainMenu] = useState("bengaluru-ghee-dose")
     const changeMenuSelection = (key: string) => {
         setActiveMainMenu(key)
     }
-
+    const isMobile = useIsMobile(600)
     return <>
         <FloatingSocial />
         <Element name="home" className="landing-section">
@@ -167,8 +168,8 @@ export default function IndexPage() {
                             0: {
                                 slidesPerView: 1,   // mobile
                             },
-                            640: {
-                                slidesPerView: 2,   // small tablets
+                            800: {
+                                slidesPerView: 3,   // small tablets
                             },
                             1024: {
                                 slidesPerView: 4,   // laptops/desktops
@@ -282,13 +283,48 @@ export default function IndexPage() {
                 </div>
 
                 <div className="special-card-container">
-                    {
-                        ProductData.map((product, index) => {
-                            if (index < 4) {
-                                return <ProductCard key={product.id} {...product} />
+                    {isMobile ? (<>
+                        {ProductData.slice(0, 4).map((product) => (
+                            <ProductCard key={product.id} {...product} />
+                        ))}
+                    </>
+                    ) : (
+                        <Swiper
+                            modules={[Autoplay]}
+                            autoplay={{
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true,
+                            }}
+                            centeredSlides={false}
+                            loop={true}
+                            breakpoints={{
+
+                                800: {
+                                    slidesPerView: 2,   // small tablets
+                                },
+                                1024: {
+                                    slidesPerView: 4,   // laptops/desktops
+                                },
+                                1440: {
+                                    slidesPerView: 4,   // large screens
+                                },
+                                1920: {
+                                    slidesPerView: 4
+                                }
+                            }}>
+                            {
+                                ProductData.map((product, index) => {
+                                    if (index < 4) {
+                                        return <SwiperSlide key={product.id}>
+                                            <ProductCard  {...product} />
+                                        </SwiperSlide>
+                                    }
+                                })
                             }
-                        })
-                    }
+                        </Swiper>
+                    )}
+                    
                 </div>
             </div>
         </Element>

@@ -159,7 +159,7 @@ export default function IndexPage() {
                 </div>
                 <div className="menu-tags-container row">
                     {
-                        MainMenuData.map(item => <div key={item.id} className={`menu-selection-tag ${activeMainMenu === item.tags ? "active" : ""}`} onClick={() => changeMenuSelection(item.key)}>
+                        MainMenuData.map(item => <div key={item.id} className={`menu-selection-tag ${activeMainMenu === item.tags ? "active" : ""}`} onClick={() => changeMenuSelection(item.tags)}>
                             <p>{item.title}</p>
                         </div>)
                     }

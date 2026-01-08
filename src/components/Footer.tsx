@@ -19,7 +19,7 @@ export default function Footer() {
 
             <div className="copyright cent">
                 <p>
-                    &copy; {currentYear} Benneluru. All rights reserved.
+                    &copy; {currentYear} Benneluru & Developed By <a href="https://muftlo.com" target="_blank" rel="noopener noreferrer">Muftlo</a> . All rights reserved.
                 </p>
             </div>
         </div>
